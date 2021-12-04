@@ -116,12 +116,12 @@ const {
         if (!results) {
           return res.json({
             success: 0,
-            message: "Record Not Found"
+            message: "user deleted successfully"
           });
         }
         return res.json({
           success: 1,
-          message: "user deleted successfully"
+          message: "Record Not Found"
         });
       });
     }
