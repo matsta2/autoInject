@@ -26,7 +26,7 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                        AutoInject <i className='fab fa-typo3'/>
+                        AutoInject  <i className='fas fa-car'/>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -38,17 +38,17 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/servisas' className='nav-links' onClick={closeMobileMenu}>
-                                Servisas
+                            <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
+                                Servisai
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/detale' className='nav-links' onClick={closeMobileMenu}>
-                                Detale
+                            <Link to='/parts' className='nav-links' onClick={closeMobileMenu}>
+                                Detalės
                             </Link>
                         </li>
                         <li className='nav-links-mobile'>
-                            <Link to='/prisijungimas' className='nav-links-mobile' onClick={closeMobileMenu}>
+                            <Link to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Prisijungimas
                             </Link>
                         </li>
