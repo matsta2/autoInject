@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
-import Part from './components/pages/Part';
-import Services from './components/pages/Services';
 import LogIn from './components/pages/LogIn';
-import Apps from './Apps';
-
+import Register from './components/pages/Register'
+import Apps from './AppDetale';
+import CreatePart from './components/CreatePart';
+import AppService from './AppService';
+import CreateService from './components/createService';
 function App() {
   return (
     <>
@@ -17,8 +17,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/parts' element={<Apps/>} />
-        <Route path='/services' element={<Services/>} />
+        <Route path='/services' element={<AppService/>} />
         <Route path='/login' element={<LogIn/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/createPart' element={<CreatePart/>} />
+        <Route path='/createService' element={<CreateService/>} />
       </Routes>
     </Router>
     </>

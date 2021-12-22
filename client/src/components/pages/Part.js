@@ -6,6 +6,8 @@ import tw from "twin.macro";
 import { useGlobalFilter, useSortBy, useTable } from "react-table";
 import styled from 'styled-components'
 import { GlobalFilter } from "../GlobalFilter";
+import { Link } from 'react-router-dom';
+
 
 const Table = tw.table`
   table-fixed
@@ -44,8 +46,8 @@ const Button = tw.button`
   pb-2
   text-black
   rounded-md
-  bg-green-300
-  hover:bg-green-200
+  bg-yellow-300
+  hover:bg-yellow-200
   transition-colors
 `;
 const Button2 = tw.button`
@@ -59,6 +61,19 @@ const Button2 = tw.button`
   hover:bg-red-200
   transition-colors
 `;
+
+const Button3 = tw.button`
+  pl-4
+  pr-4
+  pt-2
+  pb-2
+  text-black
+  rounded-md
+  bg-green-300
+  hover:bg-green-200
+  transition-colors
+`;
+
 const Styles = styled.div`
  table {
    border-spacing: 0;
@@ -129,12 +144,16 @@ export function Part(props) {
         if (response) {
           const partList = response.data;
     
-          console.log("Products: ", partList);
+          console.log("Parts: ", partList);
           setPartList(partList);
         }
       };
-
       
+    const deletePart = (id) => {
+      Axios.delete(`http://localhost:8080/api/v1/detale/${id}`);
+      alert("deleting: " + id)
+      window.location.reload(false);
+    }
 
     const columns = useMemo(() => ([
         {
@@ -162,7 +181,7 @@ export function Part(props) {
           id: "Edit",
           Header: 'Edit',
           Cell: ({row}) => (
-            <Button onCLick={() => alert("Editing: " + row.values.pavadinimas)}>
+            <Button onClick={() => alert("Editing: " + row.values.pavadinimas)}>
               Edit
             </Button>
           )
@@ -171,7 +190,7 @@ export function Part(props) {
           id: "Delete",
           Header: 'Delete',
           Cell: ({row}) => (
-            <Button2 onCLick={() => alert("Deleting: " + row.values.pavadinimas)}>
+            <Button2 onClick={() => {deletePart(row.values.id)}}>
               Delete
             </Button2>
           )
@@ -244,6 +263,10 @@ export function Part(props) {
         setGlobalFilter={setGlobalFilter}
         globalFilter={state.globalFilter}
       />
+      <Link to="/createPart">
+      <Button3>Sukurti</Button3>
+      </Link>
+      
       <Styles>
       <Table {...getTableProps()}>  
    
@@ -268,11 +291,12 @@ export function Part(props) {
                                 ))}    
                             </TableRow>   
                 })}        
-        </TableBody>
+        </TableBody>   
     </Table>
     </Styles>
     </> 
     )
+    
 }
 
 export default Part

@@ -1,7 +1,8 @@
 import "./App.css";
 
 import tw from "twin.macro";
-import { Part } from "./components/pages/Part";
+import { Services } from "./components/pages/Services";
+import Footer from "./components/Footer";
 
 const AppContainer = tw.div`
   w-full
@@ -21,13 +22,14 @@ const Title = tw.h1`
   font-semibold
 `;
 
-function Apps() {
+function AppService() {
   return (
     <AppContainer>
-      <Title>Prieinamos detalės: </Title>
-      <Part />
+      <Title>Mūsų servisai: </Title>
+      <Services />
+      
     </AppContainer>
   );
 }
 
-export default Apps;
+export default AppService;

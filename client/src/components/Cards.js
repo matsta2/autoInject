@@ -11,13 +11,13 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/Total-Logo.jpg'
-              text='Explore the hidden waterfall deep inside the Amazon Jungle'
+              text='Partneris Total, pagrindinis tepalų tiekejas'
               label='Partneris'
               path='/services'
             />
             <CardItem
               src='images/bosch.jpg'
-              text='Travel through the Islands of Bali in a Private Cruise'
+              text='Partneris Bosch, pagrindinis įrangos tiekejas'
               label='Partneris'
               path='/services'
             />
@@ -25,21 +25,21 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/Hella-logo.jpg'
-              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
+              text='Partneris Hella'
               label='Partneris'
               path='/services'
             />
             <CardItem
               src='images/honda.jpg'
-              text='Experience Football on Top of the Himilayan Mountains'
+              text='Partneris Honda'
               label='Partneris'
               path='/products'
             />
             <CardItem
               src='images/pirelli.jpg'
-              text='Ride through the Sahara Desert on a guided camel tour'
+              text='Partneris Pirelii'
               label='Partneris'
-              path='/sign-up'
+              path='/services'
             />
           </ul>
         </div>

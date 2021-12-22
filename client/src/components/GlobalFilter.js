@@ -45,7 +45,7 @@ export function GlobalFilter({
           setValue(e.target.value);
           onChange(e.target.value);
         }}
-        placeholder={`${count} detalės...`}
+        placeholder={`${count} variantai...`}
       />
     </SearchContainer>
   );

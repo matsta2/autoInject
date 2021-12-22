@@ -11,13 +11,7 @@
 .home,
 .services,
 .parts,
-.login {
-  display: flex;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-}
+
 
 .services {
   background-position: center;
@@ -36,13 +30,6 @@
   font-size: 30px;
 }
 
-.login {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #242424;
-  font-size: 30px;
-}
 
 .form {
   display: flex;
@@ -55,4 +42,21 @@
   height: 60px;
   margin: 10px;
   font-size: 20px;
+}
+.login {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+  padding-bottom: 50vh;
+}
+.Registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+  padding-bottom: 50vh;
 }
