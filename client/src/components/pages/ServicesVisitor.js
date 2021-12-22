@@ -107,7 +107,7 @@ const Styles = styled.div`
 `
 
 
-export function Services(props) {
+export function ServicesVisitor(props) {
   const [serviceList, setServiceList] = useState([])
 
   const fetchServices = async () => {
@@ -123,36 +123,6 @@ export function Services(props) {
     }
   };
 
-  const deleteService = (id) => {
-    Axios.delete(`http://localhost:8080/api/v1/servisas/${id}`);
-    alert("deleting: " + id)
-    window.location.reload(false);
-  }
-
-  const tableHooks = (hooks) => {
-    hooks.visibleColumns.push((columns) => [
-      ...columns,
-      {
-        id: "Edit",
-        Header: 'Edit',
-        Cell: ({row}) => (
-          <Button onClick={() => alert("Editing: " + row.values.pavadinimas)}>
-            Keisti
-          </Button>
-        )
-      },
-      {
-        id: "Delete",
-        Header: 'Delete',
-        Cell: ({row}) => (
-          <Button2 onClick={() => {deleteService(row.values.id)}}>
-            Ištrinti
-          </Button2>
-        )
-      }
-    ])
-  };
-
   const serviceData = useMemo(() => [...serviceList], [serviceList]);
   const serviceColumns = useMemo(() => serviceList[0] ? Object.keys(serviceList[0]).filter((key) => key !== "rating").map((key) => {
     return { Header: key, accessor: key};
@@ -164,7 +134,6 @@ export function Services(props) {
       data : serviceData
     }, 
     useGlobalFilter,
-    tableHooks,
     useSortBy
     );
   const {
@@ -189,9 +158,6 @@ export function Services(props) {
       setGlobalFilter={setGlobalFilter}
       globalFilter={state.globalFilter}
     />
-    <Link to="/createService">
-    <Button3>Sukurti</Button3>
-    </Link>
     
     <Styles>
     <Table {...getTableProps()}>  
@@ -225,4 +191,4 @@ export function Services(props) {
   
 }
 
-export default Services
+export default ServicesVisitor

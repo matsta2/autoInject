@@ -52,8 +52,10 @@ function LogIn() {
       if (response.data.message) {
         console.log(response);
         setLoginStatus(response.data.message);
+        window.location.href = 'http://localhost:3000/partsAdmin'; 
       } else {
         setLoginStatus(response.data[0].username);
+        window.location.href = 'http://localhost:3000/partsAdmin'; 
       }
     });
   };

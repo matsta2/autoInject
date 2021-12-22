@@ -1,7 +1,7 @@
 import "./App.css";
 
 import tw from "twin.macro";
-import { Part } from "./components/pages/Part";
+import { PartVisitor } from "./components/pages/PartVisitor";
 import Footer from "./components/Footer";
 
 const AppContainer = tw.div`
@@ -22,14 +22,14 @@ const Title = tw.h1`
   font-semibold
 `;
 
-function Detale() {
+function DetaleVisitor() {
   return (
     <AppContainer>
       <Title>Prieinamos detalės: </Title>
-      <Part />
+      <PartVisitor />
       
     </AppContainer>
   );
 }
 
-export default Detale;
+export default DetaleVisitor;

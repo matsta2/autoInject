@@ -108,7 +108,7 @@ const Styles = styled.div`
 `
 
 
-export function Part(props) {
+export function PartVisitor(props) {
 
     // const [masinos_id, setMasinosid] = useState('');
     // const [pavadinimas, setPavadinimas] = useState('');
@@ -149,54 +149,7 @@ export function Part(props) {
         }
       };
       
-    const deletePart = (id) => {
-      Axios.delete(`http://localhost:8080/api/v1/detale/${id}`);
-      alert("deleting: " + id)
-      window.location.reload(false);
-    }
-
-    const columns = useMemo(() => ([
-        {
-            Header: "ID",
-            accessor: "id"
-        },
-        {
-            Header: "Pavadinimas",
-            accessor: "pavadinimas"
-        },
-        {
-            Header: "Masinos modelis",
-            accessor: "modelis"
-        },
-        {
-            Header: "Masinos metai",
-            accessor: "metai"
-        }
-    ]),[])
-
-    const tableHooks = (hooks) => {
-      hooks.visibleColumns.push((columns) => [
-        ...columns,
-        {
-          id: "Edit",
-          Header: 'Edit',
-          Cell: ({row}) => (
-            <Button onClick={() => alert("Editing: " + row.values.pavadinimas)}>
-              Keisti
-            </Button>
-          )
-        },
-        {
-          id: "Delete",
-          Header: 'Delete',
-          Cell: ({row}) => (
-            <Button2 onClick={() => {deletePart(row.values.id)}}>
-              Ištrinti
-            </Button2>
-          )
-        }
-      ])
-    };
+ 
 
     const partsData = useMemo(() => [...partList], [partList]);
     const partsColumns = useMemo(() => partList[0] ? Object.keys(partList[0]).filter((key) => key !== "rating").map((key) => {
@@ -209,7 +162,6 @@ export function Part(props) {
           data : partsData
         }, 
         useGlobalFilter,
-        tableHooks,
         useSortBy
         );
 
@@ -263,9 +215,6 @@ export function Part(props) {
         setGlobalFilter={setGlobalFilter}
         globalFilter={state.globalFilter}
       />
-      <Link to="/createPart">
-      <Button3>Sukurti</Button3>
-      </Link>
       
       <Styles>
       <Table {...getTableProps()}>  
@@ -299,4 +248,4 @@ export function Part(props) {
     
 }
 
-export default Part
+export default PartVisitor

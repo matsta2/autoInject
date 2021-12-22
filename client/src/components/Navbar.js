@@ -55,7 +55,7 @@ function Navbar() {
                         </li>
                         <li className='nav-links-mobile'>
                             <Link to='/registration' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                PRegistracija
+                                Registracija
                             </Link>
                         </li>
                     </ul>
